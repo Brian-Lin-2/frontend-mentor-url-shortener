@@ -1,21 +1,21 @@
 import InfoCard from "./body/InfoCard";
-import SignUp from "./body/SignUp";
+import Shorten from "./body/Shorten";
 import Start from "./body/Start";
 
 export default function Body() {
   const info = [
     {
-      image: "",
+      image: "./images/icon-brand-recognition.svg",
       title: "Brand Recognition",
       info: "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
     },
     {
-      image: "",
+      image: "./images/icon-detailed-records.svg",
       title: "Detailed Records",
       info: "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
     },
     {
-      image: "",
+      image: "./images/icon-fully-customizable.svg",
       title: "Fully Customizable",
       info: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
     },
@@ -24,7 +24,7 @@ export default function Body() {
   return (
     <>
       <div>
-        <SignUp />
+        <Shorten />
 
         <div>
           <h1>Advanced Statistics</h1>
@@ -35,7 +35,14 @@ export default function Body() {
         </div>
 
         {info.map((info) => {
-          <InfoCard />;
+          return (
+            <InfoCard
+              key={crypto.randomUUID()}
+              image={info.image}
+              title={info.title}
+              info={info.info}
+            />
+          );
         })}
       </div>
       <Start />

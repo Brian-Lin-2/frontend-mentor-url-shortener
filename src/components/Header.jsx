@@ -2,11 +2,11 @@ export default function Header() {
   return (
     <div>
       <div>
-        <img />
-        <img />
+        <img src="./images/logo.svg" alt="shortly" />
+        <img className="w-8" src="./images/icon-hamburger.svg" alt="" />
       </div>
 
-      <img />
+      <img src="./images/illustration-working.svg" alt="hero" />
       <div>
         <h1>More than just shorter links</h1>
         <p>
