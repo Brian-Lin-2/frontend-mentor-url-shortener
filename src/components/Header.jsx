@@ -7,7 +7,7 @@ export default function Header() {
       </div>
 
       <img src="./images/illustration-working.svg" alt="hero" />
-      <div className="mt-6 flex flex-col items-center text-center">
+      <div className="mt-8 flex flex-col items-center text-center">
         <h1 className="text-4xl font-bold">More than just shorter links</h1>
         <p className="text-grayish-violet mx-6 mt-3 mb-6">
           Build your brand’s recognition and get detailed insights on how your
