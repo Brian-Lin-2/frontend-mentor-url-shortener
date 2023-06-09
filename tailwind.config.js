@@ -7,7 +7,7 @@ export default {
         cyan: "hsl(180, 66%, 49%)",
         "dark-violet": "hsl(257, 27%, 26%)",
         red: "hsl(0, 87%, 67%)",
-        gray: "hsl(0, 0%, 75%)",
+        gray: "hsl(223, 28%, 95.1%)",
         "grayish-violet": "hsl(257, 7%, 63%)",
         "v-dark-blue": "hsl(255, 11%, 22%)",
         "v-dark-violet": "hsl(260, 8%, 14%)",

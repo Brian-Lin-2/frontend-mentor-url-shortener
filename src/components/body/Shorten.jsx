@@ -1,6 +1,6 @@
 export default function Shorten() {
   return (
-    <form className="flex flex-col border items-center bg-dark-violet mx-8 py-6 px-2 rounded-lg">
+    <form className="flex flex-col items-center bg-dark-violet mx-8 py-6 px-2 rounded-lg">
       <input
         className="outline-none w-11/12 mb-4 rounded-md p-4 pb-3 text-sm"
         type="text"

@@ -23,27 +23,29 @@ export default function Body() {
 
   return (
     <>
-      <div>
+      <div className="bg-gray py-24">
         <Shorten />
 
-        <div>
-          <h1>Advanced Statistics</h1>
-          <p>
+        <div className="mx-6 text-center mb-32">
+          <h1 className="font-bold text-2xl mb-4">Advanced Statistics</h1>
+          <p className="text-grayish-violet leading-relaxed">
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </p>
         </div>
 
-        {info.map((info) => {
-          return (
-            <InfoCard
-              key={crypto.randomUUID()}
-              image={info.image}
-              title={info.title}
-              info={info.info}
-            />
-          );
-        })}
+        <div className="border grid grid-cols-1 grid-rows-3 gap-20 mx-6">
+          {info.map((info) => {
+            return (
+              <InfoCard
+                key={crypto.randomUUID()}
+                image={info.image}
+                title={info.title}
+                info={info.info}
+              />
+            );
+          })}
+        </div>
       </div>
       <Start />
     </>
