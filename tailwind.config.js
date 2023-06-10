@@ -18,6 +18,12 @@ export default {
       width: {
         mobile: "375px",
       },
+      backgroundImage: {
+        "shorten-pattern-mob": "url('./images/bg-shorten-mobile.svg')",
+        "shorten-pattern-desk": "url('./images/bg-shorten-desktop.svg')",
+        "boost-pattern-mob": "url('./images/bg-boost-mobile.svg')",
+        "boost-pattern-desk": "url('./images/bg-boost-desktop.svg')",
+      },
     },
   },
   plugins: [],
