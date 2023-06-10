@@ -10,8 +10,5 @@ Sign Up
 <img src="./images/bg-boost-mobile.svg">
 <img src="./images/bg-shorten-desktop.svg">
 <img src="./images/bg-shorten-mobile.svg">
-<img src="./images/icon-facebook.svg">
-<img src="./images/icon-instagram.svg">
-<img src="./images/icon-pinterest.svg">
-<img src="./images/icon-twitter.svg">
+
 ./images/icon-close.svg
