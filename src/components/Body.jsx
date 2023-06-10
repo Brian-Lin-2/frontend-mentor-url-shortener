@@ -23,7 +23,7 @@ export default function Body() {
 
   return (
     <>
-      <div className="bg-gray py-24">
+      <div className="bg-gray pb-24">
         <Shorten />
 
         <div className="mx-6 text-center mb-32">
@@ -34,7 +34,7 @@ export default function Body() {
           </p>
         </div>
 
-        <div className="border grid grid-cols-1 grid-rows-3 gap-20 mx-6">
+        <div className="grid grid-cols-1 grid-rows-3 gap-20 mx-6">
           {info.map((info) => {
             return (
               <InfoCard
