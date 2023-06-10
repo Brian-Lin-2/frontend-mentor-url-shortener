@@ -1,6 +1,6 @@
 import InfoCard from "./body/InfoCard";
 import Shorten from "./body/Shorten";
-import Start from "./body/Start";
+import Boost from "./body/Boost";
 
 export default function Body() {
   const info = [
@@ -47,7 +47,8 @@ export default function Body() {
           })}
         </div>
       </div>
-      <Start />
+
+      <Boost />
     </>
   );
 }
