@@ -24,6 +24,9 @@ export default {
         "boost-pattern-mob": "url('./images/bg-boost-mobile.svg')",
         "boost-pattern-desk": "url('./images/bg-boost-desktop.svg')",
       },
+      spacing: {
+        46: "184px",
+      },
     },
   },
   plugins: [],
