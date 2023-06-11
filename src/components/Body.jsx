@@ -35,7 +35,7 @@ export default function Body() {
         </div>
 
         <div className="grid grid-cols-1 grid-rows-3 gap-24 mx-6">
-          <div className="absolute w-2 bg-cyan h-full left-46"></div>
+          <div className="absolute w-2 bg-cyan h-full left-1/2 -mx-1"></div>
           {info.map((info) => {
             return (
               <InfoCard

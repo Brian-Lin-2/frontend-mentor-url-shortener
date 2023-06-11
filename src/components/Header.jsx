@@ -1,10 +1,9 @@
+import Navbar from "./header/Navbar";
+
 export default function Header() {
   return (
     <div className="p-4 pb-20 mb-20">
-      <div className="flex justify-between mb-12">
-        <img src="./images/logo.svg" alt="shortly" />
-        <img className="w-8" src="./images/icon-hamburger.svg" alt="" />
-      </div>
+      <Navbar />
 
       <img src="./images/illustration-working.svg" alt="hero" />
       <div className="mt-8 flex flex-col items-center text-center">
