@@ -5,7 +5,7 @@ export default function Header() {
     <div className="p-4 pb-20 mb-20">
       <Navbar />
 
-      <div className="flex flex-col-reverse lg:items-center lg:flex-row lg:ml-40 lg:mt-12">
+      <div className="flex flex-col-reverse lg:items-center lg:flex-row lg:ml-32 lg:mt-12">
         <div className="mt-8 flex flex-col items-center text-center lg:text-start lg:mx-10 lg:items-start lg:w-1/2">
           <h1 className="text-4xl font-bold lg:text-7xl lg:leading-very-tight">
             More than just shorter links
