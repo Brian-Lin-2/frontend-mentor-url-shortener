@@ -27,6 +27,10 @@ export default {
       lineHeight: {
         "very-tight": "1.15",
       },
+      spacing: {
+        18: "4.5rem",
+        128: "29rem",
+      },
     },
   },
   plugins: [],

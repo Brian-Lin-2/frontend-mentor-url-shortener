@@ -26,9 +26,11 @@ export default function Body() {
       <div className="bg-gray pb-24">
         <Shorten />
 
-        <div className="mx-6 text-center mb-32">
-          <h1 className="font-bold text-2xl mb-4">Advanced Statistics</h1>
-          <p className="text-grayish-violet leading-relaxed">
+        <div className="mx-6 text-center mb-32 lg:mt-8">
+          <h1 className="font-bold text-2xl mb-4 lg:text-4xl">
+            Advanced Statistics
+          </h1>
+          <p className="text-grayish-violet leading-relaxed lg:mx-128">
             Track how your links are performing across the web with our advanced
             statistics dashboard.
           </p>
