@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <div className="lg:flex lg:justify-between lg:items-center lg:p-10">
-      <div className="flex justify-between mb-12 lg:justify-start lg:items-center lg:mb-0 lg:gap-10">
+      <div className="flex justify-between mb-12 lg:justify-start lg:items-center lg:ml-40 lg:mb-0 lg:gap-10">
         <img src="./images/logo.svg" alt="shortly" />
         <img
           className="w-8 lg:hidden"
