@@ -1,9 +1,1 @@
-Features
-Pricing
-Resources
-
-Login
-Sign Up
-
-
 ./images/icon-close.svg

@@ -14,7 +14,7 @@ export default function Header() {
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </p>
-          <button className="text-lg bg-cyan text-white py-2 px-10 rounded-full lg:py-3">
+          <button className="text-lg bg-cyan text-white py-2 px-10 rounded-full lg:py-3 hover:bg-light-cyan">
             Get Started
           </button>
         </div>

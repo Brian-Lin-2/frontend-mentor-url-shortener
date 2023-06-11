@@ -5,28 +5,30 @@ export default function Footer() {
       <div>
         <h3 className="mb-6 lg:mt-2">Features</h3>
         <div className="text-grayish-violet flex flex-col gap-3">
-          <a>Link Shortening</a>
-          <a>Branded Links</a>
-          <a>Analytics</a>
+          <a className="hover:text-cyan hover:cursor-pointer">
+            Link Shortening
+          </a>
+          <a className="hover:text-cyan hover:cursor-pointer">Branded Links</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Analytics</a>
         </div>
       </div>
 
       <div>
         <h3 className="mb-6 lg:mt-2">Resources</h3>
         <div className="text-grayish-violet flex flex-col gap-3">
-          <a>Blog</a>
-          <a>Developers</a>
-          <a>Support</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Blog</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Developers</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Support</a>
         </div>
       </div>
 
       <div>
         <h3 className="mb-6 lg:mt-2">Company</h3>
         <div className="text-grayish-violet flex flex-col gap-3">
-          <a>About</a>
-          <a>Our Team</a>
-          <a>Careers</a>
-          <a>Contact</a>
+          <a className="hover:text-cyan hover:cursor-pointer">About</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Our Team</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Careers</a>
+          <a className="hover:text-cyan hover:cursor-pointer">Contact</a>
         </div>
       </div>
 
