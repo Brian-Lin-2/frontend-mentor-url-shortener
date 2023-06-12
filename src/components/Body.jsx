@@ -26,7 +26,7 @@ export default function Body() {
 
   return (
     <>
-      <div className="bg-gray pb-24">
+      <div className="bg-light-gray pb-24">
         <Shorten />
 
         <div className="mx-6 text-center mb-32 lg:mt-12 lg:mb-20">

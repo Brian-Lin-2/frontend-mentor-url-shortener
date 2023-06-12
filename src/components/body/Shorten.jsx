@@ -10,6 +10,12 @@ export default function Shorten() {
     setHistory([...history, link]);
   }
 
+  let shortenStyle = "flex flex-col gap-16";
+
+  if (history.length !== 0) {
+    shortenStyle = "flex flex-col gap-16 mb-20";
+  }
+
   return (
     <>
       <form
@@ -35,10 +41,14 @@ export default function Shorten() {
         </p>
       </form>
 
-      <div className="flex flex-col gap-16">
-        {history.map((link) => {
-          return <Link key={crypto.randomUUID()} link={link} />;
-        })}
+      <div className={shortenStyle}>
+        {/* Creates a shallow copy and prints the array reversed */}
+        {history
+          .slice(0)
+          .reverse()
+          .map((link) => {
+            return <Link key={crypto.randomUUID()} link={link} />;
+          })}
       </div>
     </>
   );
