@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="font-poppins w-mobile">
+    <div className="font-poppins">
       <Header />
       <Body />
       <Footer />
