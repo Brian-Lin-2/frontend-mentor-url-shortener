@@ -13,7 +13,7 @@ export default function Shorten() {
   return (
     <>
       <form
-        className="bg-dark-violet bg-shorten-pattern-mob bg-right-top bg-no-repeat mx-8 py-6 px-2 rounded-lg relative bottom-20 lg:bg-shorten-pattern-desk lg:mx-48 lg:pt-12 lg:pb-6 lg:px-14 lg:bottom-18"
+        className="bg-dark-violet bg-shorten-pattern-mob bg-right-top bg-no-repeat mx-8 py-6 px-2 rounded-lg relative bottom-20 lg:bg-shorten-pattern-desk lg:mx-48 lg:pt-12 lg:pb-6 lg:px-16 lg:bottom-18"
         onSubmit={(e) => handleSubmit(e)}
       >
         <div className="flex flex-col items-center lg:flex-row lg:gap-6">
