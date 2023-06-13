@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 export default function MobileMenu({ setOpenMenu }) {
   return (
     <div className="fixed inset-0 bg-v-dark-blue text-white flex flex-col items-center gap-8 text-xl z-20">
       <a>
         <img
-          className="absolute right-0 p-6 w-20 hover:cursor-pointer"
+          className="absolute right-0 m-6 w-6 hover:cursor-pointer"
           src="./images/icon-close.svg"
           alt=""
           onClick={() => setOpenMenu(false)}

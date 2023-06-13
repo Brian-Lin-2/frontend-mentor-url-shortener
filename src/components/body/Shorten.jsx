@@ -4,16 +4,37 @@ import { useState } from "react";
 export default function Shorten() {
   const [link, setLink] = useState("");
   const [history, setHistory] = useState([]);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setHistory([...history, { link: link, short: "temp", copied: false }]);
+  let errorTextMob =
+    "hidden text-red mt-2 italic text-sm ml-16 w-full lg:hidden";
+  let errorTextDesk =
+    "hidden text-red mt-2 italic text-sm ml-8 lg:block lg:invisible";
+  let inputStyle =
+    "outline-none w-11/12 rounded-md p-4 pb-3 text-sm lg:mb-0 lg:w-4/5 lg:text-lg lg:pl-8";
+
+  if (error) {
+    errorTextMob = "text-red mt-2 italic text-sm ml-16 w-full lg:hidden";
+    errorTextDesk = "hidden text-red mt-2 italic text-sm ml-8 lg:block";
+    inputStyle =
+      "w-11/12 rounded-md p-4 pb-3 text-sm outline outline-2 -outline-offset-1 outline-red lg:mb-0 lg:w-4/5 lg:text-lg lg:pl-8";
   }
 
   let shortenStyle = "flex flex-col gap-16";
 
   if (history.length !== 0) {
     shortenStyle = "flex flex-col gap-16 mb-20";
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (link === "") {
+      setError(true);
+    } else {
+      setError(false);
+      setHistory([...history, { link: link, short: "temp", copied: false }]);
+    }
   }
 
   return (
@@ -24,21 +45,17 @@ export default function Shorten() {
       >
         <div className="flex flex-col items-center lg:flex-row lg:gap-6">
           <input
-            className="outline-none w-11/12 rounded-md p-4 pb-3 text-sm outline-2 -outline-offset-1 outline-red lg:mb-0 lg:w-4/5 lg:text-lg lg:pl-8"
+            className={inputStyle}
             type="text"
             placeholder="Shorten a link here..."
             onChange={(e) => setLink(e.target.value)}
           ></input>
-          <p className="text-red mt-2 italic text-sm ml-16 w-full lg:hidden">
-            Please add a link
-          </p>
+          <p className={errorTextMob}>Please add a link</p>
           <button className="text-white bg-cyan mt-4 p-3 w-11/12 rounded-md lg:w-1/5 lg:text-lg lg:py-3.5 lg:mt-0 hover:bg-light-cyan">
             Shorten it!
           </button>
         </div>
-        <p className="hidden text-red mt-2 italic text-sm ml-8 lg:block">
-          Please add a link
-        </p>
+        <p className={errorTextDesk}>Please add a link</p>
       </form>
 
       <div className={shortenStyle}>
