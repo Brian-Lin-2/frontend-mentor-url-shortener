@@ -1,5 +1,5 @@
 import Link from "./Link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Shorten() {
   const [link, setLink] = useState("");
@@ -35,9 +35,14 @@ export default function Shorten() {
     } else {
       setError(false);
       convertLink(link);
-      setHistory([...history, { link: link, short: shortLink, copied: false }]);
     }
   }
+
+  useEffect(() => {
+    if (shortLink) {
+      setHistory([...history, { link: link, short: shortLink, copied: false }]);
+    }
+  }, [shortLink]);
 
   const convertLink = async (link) => {
     const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`);
