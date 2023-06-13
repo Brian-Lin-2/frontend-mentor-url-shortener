@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Shorten() {
   const [link, setLink] = useState("");
+  const [shortLink, setShortLink] = useState("");
   const [history, setHistory] = useState([]);
   const [error, setError] = useState(false);
 
@@ -33,10 +34,8 @@ export default function Shorten() {
       setError(true);
     } else {
       setError(false);
-      setHistory([
-        ...history,
-        { link: link, short: convertLink(link), copied: false },
-      ]);
+      convertLink(link);
+      setHistory([...history, { link: link, short: shortLink, copied: false }]);
     }
   }
 
@@ -44,7 +43,7 @@ export default function Shorten() {
     const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`);
     const short = await data.json();
 
-    return short.result.short_link;
+    setShortLink(short.result.short_link);
   };
 
   return (

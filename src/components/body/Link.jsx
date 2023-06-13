@@ -20,7 +20,7 @@ export default function Link({ link, short, copied, history, setHistory }) {
           onClick={() =>
             setHistory(
               history.map((item) => {
-                if (item.link === link) {
+                if (item.short === short) {
                   return { ...item, copied: true };
                 } else {
                   return { ...item };
