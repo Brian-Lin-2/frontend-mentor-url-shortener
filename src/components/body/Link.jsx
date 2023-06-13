@@ -23,7 +23,6 @@ export default function Link({ link, short, copied, history, setHistory }) {
                 if (item.short === short) {
                   // This method copies the short link.
                   navigator.clipboard.writeText(short);
-
                   return { ...item, copied: true };
                 } else {
                   return { ...item };

@@ -47,7 +47,12 @@ export default function Shorten() {
   };
 
   useEffect(() => {
-    if (shortLink) {
+    if (shortLink && history.length >= 3) {
+      setHistory([
+        ...history.slice(0, 2),
+        { link: link, short: shortLink, copied: false },
+      ]);
+    } else if (shortLink) {
       setHistory([...history, { link: link, short: shortLink, copied: false }]);
     }
   }, [shortLink]);
