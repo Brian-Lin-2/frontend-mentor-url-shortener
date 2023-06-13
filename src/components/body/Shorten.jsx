@@ -38,18 +38,19 @@ export default function Shorten() {
     }
   }
 
+  const convertLink = async (link) => {
+    const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`);
+    const short = await data.json();
+
+    // This will trigger the useEffect() hook.
+    setShortLink(short.result.short_link);
+  };
+
   useEffect(() => {
     if (shortLink) {
       setHistory([...history, { link: link, short: shortLink, copied: false }]);
     }
   }, [shortLink]);
-
-  const convertLink = async (link) => {
-    const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`);
-    const short = await data.json();
-
-    setShortLink(short.result.short_link);
-  };
 
   return (
     <>
