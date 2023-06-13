@@ -23,7 +23,7 @@ export default function Link({ link, short, copied, history, setHistory }) {
                 if (item.link === link) {
                   return { ...item, copied: true };
                 } else {
-                  return { item };
+                  return { ...item };
                 }
               })
             )
