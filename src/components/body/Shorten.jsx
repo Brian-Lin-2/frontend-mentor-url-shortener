@@ -43,7 +43,7 @@ export default function Shorten() {
     const short = await data.json();
 
     // This will trigger the useEffect() hook.
-    setShortLink(short.result.short_link);
+    setShortLink(short.result.full_short_link);
   };
 
   useEffect(() => {
