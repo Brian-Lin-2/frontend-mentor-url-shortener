@@ -1,9 +1,5 @@
-import { useState } from "react";
-
 /* eslint-disable react/prop-types */
-export default function Link({ link }) {
-  const [copied, setCopied] = useState(false);
-
+export default function Link({ link, short, copied, history, setHistory }) {
   let buttonStyle =
     "bg-cyan text-sm rounded-md py-2.5 text-white lg:py-2 lg:px-6 lg:text-sm";
 
@@ -18,8 +14,21 @@ export default function Link({ link }) {
         {link}
       </p>
       <div className="flex flex-col px-4 py-3 gap-2 lg:flex-row lg:p-0 lg:gap-6 lg:items-center">
-        <p className="text-cyan lg:mt-1">Placeholder</p>
-        <button className={buttonStyle} onClick={() => setCopied(true)}>
+        <p className="text-cyan lg:mt-1">{short}</p>
+        <button
+          className={buttonStyle}
+          onClick={() =>
+            setHistory(
+              history.map((item) => {
+                if (item.link === link) {
+                  return { ...item, copied: true };
+                } else {
+                  return { item };
+                }
+              })
+            )
+          }
+        >
           {copied ? "Copied!" : "Copy"}
         </button>
       </div>

@@ -7,7 +7,7 @@ export default function Shorten() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setHistory([...history, link]);
+    setHistory([...history, { link: link, short: "temp", copied: false }]);
   }
 
   let shortenStyle = "flex flex-col gap-16";
@@ -46,8 +46,17 @@ export default function Shorten() {
         {history
           .slice(0)
           .reverse()
-          .map((link) => {
-            return <Link key={crypto.randomUUID()} link={link} />;
+          .map((item) => {
+            return (
+              <Link
+                key={crypto.randomUUID()}
+                link={item.link}
+                short={item.short}
+                copied={item.copied}
+                history={history}
+                setHistory={setHistory}
+              />
+            );
           })}
       </div>
     </>
