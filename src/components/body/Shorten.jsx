@@ -8,7 +8,6 @@ export default function Shorten() {
   };
 
   const [link, setLink] = useState("");
-  const [shortLink, setShortLink] = useState("");
   const [history, setHistory] = useState(getStorage());
   const [error, setError] = useState(false);
 
@@ -45,22 +44,25 @@ export default function Shorten() {
 
   const convertLink = async (link) => {
     const data = await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`);
-    const short = await data.json();
 
-    // This will trigger the useEffect() hook.
-    setShortLink(short.result.full_short_link);
+    await data.json().then((data) => {
+      handleHistory(data);
+    });
   };
 
-  useEffect(() => {
-    if (shortLink && history.length >= 3) {
+  const handleHistory = (data) => {
+    if (history.length >= 3) {
       setHistory([
         ...history.slice(0, 2),
-        { link: link, short: shortLink, copied: false },
+        { link: link, short: data.result.full_short_link, copied: false },
       ]);
-    } else if (shortLink) {
-      setHistory([...history, { link: link, short: shortLink, copied: false }]);
+    } else {
+      setHistory([
+        ...history,
+        { link: link, short: data.result.full_short_link, copied: false },
+      ]);
     }
-  }, [shortLink]);
+  };
 
   // Saves links in local memory for future use.
   useEffect(() => {
