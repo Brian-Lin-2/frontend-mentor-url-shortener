@@ -1,5 +1,7 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
+![Design](./design/desktop-preview.jpg)
+
 This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
@@ -34,12 +36,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Design](./design/desktop-preview.jpg)
-<br />
+Desktop Design:
+<img width="800" src="./design/desktop-active-states.jpg" alt="image">
 
-![Desktop Design](./design/desktop-active-states.jpg)
-
-![Mobile Design](./design/mobile-active-states.jpg)
+Mobile Design:
+<img width="800" src="./design/mobile-active-states.jpg" alt="image">
 
 ### Links
 
