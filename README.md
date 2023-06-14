@@ -37,10 +37,10 @@ Users should be able to:
 ### Screenshot
 
 Desktop Design:
-<img width="800" src="./design/desktop-active-states.jpg" alt="image">
+<img width="400" src="./design/desktop-active-states.jpg" alt="image">
 
 Mobile Design:
-<img width="800" src="./design/mobile-active-states.jpg" alt="image">
+<img width="100" src="./design/mobile-active-states.jpg" alt="image">
 
 ### Links
 
