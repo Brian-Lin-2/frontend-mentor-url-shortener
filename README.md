@@ -39,9 +39,8 @@ Desktop Design:
 <br /> <img width="600" src="./design/desktop-active-states.jpg" alt="image">
 
 Mobile Design:
-<br />
-<img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/48a16816-705f-4ab8-b14e-432bd23ec42f">
-<img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/de23ade3-1e33-4e71-b983-8d2513820cbb">
+<br /> <img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/48a16816-705f-4ab8-b14e-432bd23ec42f">
+<br /> <img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/de23ade3-1e33-4e71-b983-8d2513820cbb">
 
 ### Live Site
 
