@@ -1,4 +1,4 @@
-import InfoCard from "../body/Boost";
+import InfoCard from "../body/InfoCard";
 import Shorten from "../body/Shorten";
 import Boost from "../body/Boost";
 
