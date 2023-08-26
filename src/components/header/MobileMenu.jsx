@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 export default function MobileMenu({ setOpenMenu }) {
   return (
@@ -17,10 +19,15 @@ export default function MobileMenu({ setOpenMenu }) {
         <a className="hover:text-cyan hover:cursor-pointer">Resources</a>
       </div>
 
-      <button className="hover:text-cyan hover:cursor-pointer">Login</button>
-      <button className="py-2 px-28 bg-cyan rounded-full hover:bg-light-cyan">
+      <Link to="/login" className="hover:text-cyan hover:cursor-pointer">
+        Login
+      </Link>
+      <Link
+        to="/register"
+        className="py-2 px-28 bg-cyan rounded-full hover:bg-light-cyan"
+      >
         Sign Up
-      </button>
+      </Link>
     </div>
   );
 }

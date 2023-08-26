@@ -1,4 +1,4 @@
-import Navbar from "./header/Navbar";
+import Navbar from "../header/Navbar";
 
 export default function Header() {
   return (

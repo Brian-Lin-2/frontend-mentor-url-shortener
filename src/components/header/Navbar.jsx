@@ -1,5 +1,6 @@
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -30,13 +31,19 @@ export default function Navbar() {
           Resources
         </a>
       </div>
-      <div className="flex gap-8 mr-32">
-        <button className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black">
+      <div className="flex items-center gap-8 mr-32">
+        <Link
+          to="/login"
+          className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black"
+        >
           Login
-        </button>
-        <button className="hidden lg:block bg-cyan py-2 px-6 rounded-full text-white text-sm hover:bg-light-cyan">
+        </Link>
+        <Link
+          to="/register"
+          className="hidden lg:block bg-cyan py-2 px-6 rounded-full text-white text-sm hover:bg-light-cyan"
+        >
           Sign Up
-        </button>
+        </Link>
       </div>
     </div>
   );
