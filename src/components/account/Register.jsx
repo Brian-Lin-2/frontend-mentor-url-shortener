@@ -2,38 +2,40 @@ import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <form className="bg-light-gray p-10 flex flex-col gap-4">
-        <div className="flex flex-col">
-          <label htmlFor="email">Email</label>
-          <input
-            className="border outline-none"
-            type="email"
-            name="email"
-            placeholder="Enter Email"
-          />
+    <div className="flex items-center justify-center min-h-screen bg-light-gray font-poppins">
+      <form className="bg-white p-10 rounded-lg flex flex-col gap-8 w-72">
+        <div className="flex items-center gap-7">
+          <Link to="/">
+            <img className="w-7" src="/images/arrow-back.svg" alt="" />
+          </Link>
+          <h1 className="text-2xl">Register</h1>
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="password">Password</label>
-          <input
-            className="border outline-none"
-            type="password"
-            name="password"
-            placeholder="Enter Password"
-          />
-        </div>
-        <div className="mb-3 flex flex-col">
-          <label htmlFor="password">Confirm Password</label>
-          <input
-            className="border outline-none"
-            type="password"
-            name="password"
-            placeholder="Confirm Password"
-          />
-        </div>
-        <button className="border">Register</button>
-        <Link to="/login" className="underline text-center">
-          Already have an account?
+        <input
+          className="border-b outline-none"
+          type="email"
+          name="email"
+          placeholder="Email"
+        />
+        <input
+          className="border-b outline-none"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
+        <input
+          className="border-b outline-none"
+          type="password"
+          name="password"
+          placeholder="Confirm Password"
+        />
+        <button className="bg-cyan p-1 rounded text-white hover:text-black">
+          Register
+        </button>
+        <Link
+          to="/login"
+          className="underline text-center -mt-5 text-black hover:text-grayish-violet"
+        >
+          Have an account?
         </Link>
       </form>
     </div>
