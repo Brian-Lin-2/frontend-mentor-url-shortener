@@ -17,7 +17,7 @@ export default function Register() {
 
     if (password !== confirmPw) {
       setError({
-        ...error,
+        email: false,
         password: true,
         confirmPw: true,
         errorText: "Different Passwords.",
@@ -25,25 +25,16 @@ export default function Register() {
       return false;
     } else if (!emailRegex.test(email) && password === "" && confirmPw === "") {
       setError({
-        ...error,
         email: true,
         password: true,
         confirmPw: true,
         errorText: "Invalid Information.",
       });
       return false;
-    } else if (!emailRegex.test(email) && password === "") {
+    } else if (password === "" && confirmPw === "") {
       setError({
-        ...error,
-        email: true,
+        email: false,
         password: true,
-        errorText: "Invalid Information.",
-      });
-      return false;
-    } else if (!emailRegex.test(email) && confirmPw === "") {
-      setError({
-        ...error,
-        email: true,
         confirmPw: true,
         errorText: "Invalid Information.",
       });
@@ -62,6 +53,22 @@ export default function Register() {
     }
   };
 
+  let style = {
+    email: "border-b outline-none",
+    password: "border-b outline-none",
+    confirmPw: "border-b outline-none",
+  };
+
+  if (error.email) {
+    style.email = "border-b-2 outline-none text-red";
+  }
+  if (error.password) {
+    style.password = "border-b-2 outline-none text-red";
+  }
+  if (error.confirmPw) {
+    style.confirmPw = "border-b-2 outline-none text-red";
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-light-gray font-poppins">
       <form
@@ -75,7 +82,7 @@ export default function Register() {
           <h1 className="text-2xl">Register</h1>
         </div>
         <input
-          className="border-b outline-none"
+          className={style.email}
           type="email"
           name="email"
           placeholder="Email"
@@ -84,7 +91,7 @@ export default function Register() {
           }}
         />
         <input
-          className="border-b outline-none"
+          className={style.password}
           type="password"
           name="password"
           placeholder="Password"
@@ -93,7 +100,7 @@ export default function Register() {
           }}
         />
         <input
-          className="border-b outline-none"
+          className={style.confirmPw}
           type="password"
           name="password"
           placeholder="Confirm Password"
@@ -108,8 +115,11 @@ export default function Register() {
           to="/login"
           className="underline text-center -mt-5 text-black hover:text-grayish-violet"
         >
-          Have an account?
+          Have An Account?
         </Link>
+        {(error.email || error.password || error.confirmPw) && (
+          <p className="text-center -mt-6 -mb-4 text-red">{error.errorText}</p>
+        )}
       </form>
     </div>
   );

@@ -14,10 +14,10 @@ export default function Login() {
       setError({ email: true, password: true });
       return false;
     } else if (!emailRegex.test(email)) {
-      setError({ ...error, email: true });
+      setError({ email: true, password: false });
       return false;
     } else if (password === "") {
-      setError({ ...error, password: true });
+      setError({ email: false, password: true });
       return false;
     } else if (emailRegex.test(email) && password !== "") {
       setError({ email: false, password: false });
@@ -82,8 +82,8 @@ export default function Login() {
         >
           Create Account
         </Link>
-        {(error.email || email.password) && (
-          <p className="text-center -mt-4 -mb-4 text-red">
+        {(error.email || error.password) && (
+          <p className="text-center -mt-5 -mb-4 text-red">
             Invalid Information.
           </p>
         )}
