@@ -7,8 +7,7 @@ export default function Login() {
   const [error, setError] = useState({ email: false, password: false });
 
   const validateInfo = () => {
-    // eslint-disable-next-line no-useless-escape
-    const emailRegex = /.+\@.+\..+/;
+    const emailRegex = /^\S+@\S+\.\S+$/;
 
     if (!emailRegex.test(email) && password === "") {
       setError({ email: true, password: true });
@@ -57,8 +56,7 @@ export default function Login() {
         </div>
         <input
           className={emailStyle}
-          type="email"
-          name="email"
+          type="text"
           placeholder="Email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -67,7 +65,6 @@ export default function Login() {
         <input
           className={passwordStyle}
           type="password"
-          name="password"
           placeholder="Password"
           onChange={(e) => {
             setPassword(e.target.value);
