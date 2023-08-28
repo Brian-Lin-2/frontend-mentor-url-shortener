@@ -3,13 +3,11 @@ import { useState } from "react";
 
 export default function Register() {
   const [info, setInfo] = useState({
-    name: "",
     email: "",
     password: "",
     confirmPw: "",
   });
   const [error, setError] = useState({
-    name: false,
     email: false,
     password: false,
     confirmPw: false,
@@ -18,34 +16,18 @@ export default function Register() {
 
   const validateInfo = () => {
     const emailRegex = /^\S+@\S+\.\S+$/;
-    const { name, email, password, confirmPw } = info;
+    const { email, password, confirmPw } = info;
 
     if (password !== confirmPw) {
       setError({
-        name: false,
         email: false,
         password: true,
         confirmPw: true,
         errorText: "Different Passwords.",
       });
       return false;
-    } else if (
-      !emailRegex.test(email) &&
-      password === "" &&
-      confirmPw === "" &&
-      name === ""
-    ) {
-      setError({
-        name: true,
-        email: true,
-        password: true,
-        confirmPw: true,
-        errorText: "Invalid Information.",
-      });
-      return false;
     } else if (!emailRegex.test(email) && password === "" && confirmPw === "") {
       setError({
-        name: false,
         email: true,
         password: true,
         confirmPw: true,
@@ -91,15 +73,11 @@ export default function Register() {
   };
 
   let style = {
-    name: "border-b outline-none",
     email: "border-b outline-none",
     password: "border-b outline-none",
     confirmPw: "border-b outline-none",
   };
 
-  if (error.name) {
-    style.name = "border-b-2 outline-none text-red";
-  }
   if (error.email) {
     style.email = "border-b-2 outline-none text-red";
   }
@@ -122,14 +100,6 @@ export default function Register() {
           </Link>
           <h1 className="text-2xl">Register</h1>
         </div>
-        <input
-          className={style.name}
-          type="text"
-          placeholder="Name"
-          onChange={(e) => {
-            setInfo({ ...info, name: e.target.value });
-          }}
-        />
         <input
           className={style.email}
           type="text"
