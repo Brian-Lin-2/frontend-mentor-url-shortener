@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function InfoCard({ image, title, info, margin }) {
   let style =
     "flex flex-col items-center text-center bg-white p-6 rounded relative z-10 lg:text-start lg:items-start lg:pb-8 " +

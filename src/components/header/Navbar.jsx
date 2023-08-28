@@ -2,7 +2,7 @@ import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ login }) {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
           />
         </a>
 
-        {openMenu && <MobileMenu setOpenMenu={setOpenMenu} />}
+        {openMenu && <MobileMenu setOpenMenu={setOpenMenu} setAccount={setAccount} />}
 
         <a className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black hover:cursor-pointer">
           Features
@@ -31,20 +31,24 @@ export default function Navbar() {
           Resources
         </a>
       </div>
-      <div className="flex items-center gap-8 mr-32">
-        <Link
-          to="/login"
-          className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black"
-        >
-          Login
-        </Link>
-        <Link
-          to="/register"
-          className="hidden lg:block bg-cyan py-2 px-6 rounded-full text-white text-sm hover:bg-light-cyan"
-        >
-          Sign Up
-        </Link>
-      </div>
+      {!login && (
+        <div className="flex items-center gap-8 mr-32">
+          <Link
+            to="/login"
+            className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black"
+
+          >
+            Login
+          </Link>
+          <Link
+            to="/register"
+            className="hidden lg:block bg-cyan py-2 px-6 rounded-full text-white text-sm hover:bg-light-cyan"
+          >
+            Sign Up
+          </Link>
+        </div>
+      )}
+      {login && <div></div>}
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-/* eslint-disable react/prop-types */
-export default function MobileMenu({ setOpenMenu }) {
+export default function MobileMenu({ setOpenMenu, setAccount }) {
   return (
     <div className="fixed inset-0 bg-v-dark-blue text-white flex flex-col items-center gap-8 text-xl z-20">
       <a>

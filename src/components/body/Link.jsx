@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function Link({ link, short, copied, history, setHistory }) {
   let buttonStyle =
     "bg-cyan text-sm rounded-md py-2.5 text-white lg:py-2 lg:px-6 lg:text-sm";

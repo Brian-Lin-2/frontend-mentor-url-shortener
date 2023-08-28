@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-export default function Login() {
+export default function Login({ setLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({ email: false, password: false });
@@ -37,8 +37,8 @@ export default function Login() {
           password: password,
         })
         .then((res) => {
-          console.log(res);
           if (res.data) {
+            setLogin(true);
             navigate("/");
           } else {
             setError({ email: true, password: true });
