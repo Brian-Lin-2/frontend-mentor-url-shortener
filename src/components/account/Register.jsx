@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Register() {
   const [info, setInfo] = useState({
@@ -13,6 +14,7 @@ export default function Register() {
     confirmPw: false,
     errorText: "",
   });
+  const [message, setMessage] = useState("");
 
   const validateInfo = () => {
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -57,7 +59,7 @@ export default function Register() {
         name: false,
         email: false,
         password: false,
-        confirmPw,
+        confirmPw: false,
         errorText: "",
       });
       return true;
@@ -65,10 +67,27 @@ export default function Register() {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
     if (validateInfo()) {
-      // Add backend.
-    } else {
-      e.preventDefault();
+      axios
+        .post("http://localhost:3306/register", {
+          email: info.email,
+          password: info.password,
+        })
+        .then((res) => {
+          if (res.data.message) {
+            setError({
+              email: true,
+              password: false,
+              confirmPw: false,
+              errorText: res.data.message,
+            });
+          } else {
+            setMessage("Account Created!");
+          }
+        })
+        .catch((e) => console.log(e));
     }
   };
 
@@ -136,6 +155,12 @@ export default function Register() {
         {(error.email || error.password || error.confirmPw) && (
           <p className="text-center -mt-5 -mb-4 text-red">{error.errorText}</p>
         )}
+        {!error.email &&
+          !error.password &&
+          !error.confirmPw &&
+          message !== "" && (
+            <p className="text-center -mt-5 -mb-4 text-cyan">{message}</p>
+          )}
       </form>
     </div>
   );

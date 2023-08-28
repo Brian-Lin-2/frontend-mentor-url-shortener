@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -6,6 +6,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState({ email: false, password: false });
+
+  const navigate = useNavigate();
 
   const validateInfo = () => {
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -26,10 +28,23 @@ export default function Login() {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
     if (validateInfo()) {
-      axios.post("http://localhost:3306/register");
-    } else {
-      e.preventDefault();
+      axios
+        .post("http://localhost:3306/login", {
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          console.log(res);
+          if (res.data) {
+            navigate("/");
+          } else {
+            setError({ email: true, password: true });
+          }
+        })
+        .catch((e) => console.log(e));
     }
   };
 
