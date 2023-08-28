@@ -1,9 +1,9 @@
 import Navbar from "../header/Navbar";
 
-export default function Header({ login }) {
+export default function Header({ login, setLogin }) {
   return (
     <div className="p-4 pb-20 mb-20">
-      <Navbar login={login} />
+      <Navbar login={login} setLogin={setLogin} />
 
       <div className="flex flex-col-reverse lg:items-center lg:flex-row lg:ml-32 lg:mt-12">
         <div className="mt-8 flex flex-col items-center text-center lg:text-start lg:mx-10 lg:items-start lg:w-1/2">

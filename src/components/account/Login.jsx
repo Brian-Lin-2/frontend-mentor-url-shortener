@@ -86,7 +86,7 @@ export default function Login({ setLogin }) {
             setPassword(e.target.value);
           }}
         />
-        <button className="bg-cyan p-1 rounded text-white hover:opacity-80">
+        <button className="bg-cyan p-1 rounded text-white hover:bg-light-cyan">
           Login
         </button>
         <Link

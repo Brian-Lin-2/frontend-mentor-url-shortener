@@ -143,7 +143,7 @@ export default function Register() {
             setInfo({ ...info, confirmPw: e.target.value });
           }}
         />
-        <button className="bg-cyan p-1 rounded text-white hover:text-black">
+        <button className="bg-cyan p-1 rounded text-white hover:bg-light-cyan">
           Register
         </button>
         <Link

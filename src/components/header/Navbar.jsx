@@ -2,7 +2,7 @@ import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ login }) {
+export default function Navbar({ login, setLogin }) {
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -19,7 +19,7 @@ export default function Navbar({ login }) {
           />
         </a>
 
-        {openMenu && <MobileMenu setOpenMenu={setOpenMenu} setAccount={setAccount} />}
+        {openMenu && <MobileMenu setOpenMenu={setOpenMenu} login={login} />}
 
         <a className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black hover:cursor-pointer">
           Features
@@ -36,7 +36,6 @@ export default function Navbar({ login }) {
           <Link
             to="/login"
             className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black"
-
           >
             Login
           </Link>
@@ -48,7 +47,21 @@ export default function Navbar({ login }) {
           </Link>
         </div>
       )}
-      {login && <div></div>}
+      {login && (
+        <div className="flex items-center gap-8 mr-32">
+          <button className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black">
+            View Profile
+          </button>
+          <button
+            className="hidden lg:block bg-red py-2 px-6 rounded-full text-white text-sm hover:bg-light-red"
+            onClick={() => {
+              setLogin(false);
+            }}
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </div>
   );
 }
