@@ -71,7 +71,7 @@ export default function Register() {
 
     if (validateInfo()) {
       axios
-        .post("http://localhost:3306/register", {
+        .post("https://url-shortener-backend-maf5.onrender.com/register", {
           email: info.email,
           password: info.password,
         })

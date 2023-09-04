@@ -19,7 +19,13 @@ export default function Navbar({ login, setLogin }) {
           />
         </a>
 
-        {openMenu && <MobileMenu setOpenMenu={setOpenMenu} login={login} />}
+        {openMenu && (
+          <MobileMenu
+            setOpenMenu={setOpenMenu}
+            login={login}
+            setLogin={setLogin}
+          />
+        )}
 
         <a className="hidden lg:block text-grayish-violet font-bold text-sm hover:text-black hover:cursor-pointer">
           Features

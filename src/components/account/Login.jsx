@@ -32,7 +32,7 @@ export default function Login({ setLogin }) {
 
     if (validateInfo()) {
       axios
-        .post("http://localhost:3306/login", {
+        .post("https://url-shortener-backend-maf5.onrender.com/login", {
           email: email,
           password: password,
         })
