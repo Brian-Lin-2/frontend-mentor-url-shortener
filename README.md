@@ -43,10 +43,6 @@ Mobile Design:
 <br /> <img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/48a16816-705f-4ab8-b14e-432bd23ec42f">
 <br /> <img width="300" alt="image" src="https://github.com/Brian-Lin-2/frontend-mentor-url-shortener/assets/19761406/de23ade3-1e33-4e71-b983-8d2513820cbb">
 
-### Live Site
-
-- Live Site URL: [Vercel](https://frontend-mentor-url-shortener-five.vercel.app)
-
 ## My process
 
 Started with breaking down the design into components. Then I added to basic HTML structure. After that, I transitioned into styling with css (first mobile then desktop). Once the css was all finished, I added the active states before adding some basic JS. Finally, I used the shrtcode API and session storage to finish my project. Later on, I came back and added a basic backend to my project. Stored user data within a MYSQL database.
