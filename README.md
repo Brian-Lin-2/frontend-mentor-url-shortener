@@ -20,6 +20,8 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 Simple homepage of a website with a working link shortener, hover states, and error states. Interactive mobile navigation menu. Links are saved until the session ends using Session Storage.
 
+Working Login and Register User Form using Node.js and MYSQL Server (Not part of challenge).
+
 API Used: shrtcode API
 
 ### The challenge
@@ -48,13 +50,15 @@ Mobile Design:
 
 ## My process
 
-Started with breaking down the design into components. Then I added to basic HTML structure. After that, I transitioned into styling with css (first mobile then desktop). Once the css was all finished, I added the active states before adding some basic JS. Finally, I used the shrtcode API and session storage to finish my project.
+Started with breaking down the design into components. Then I added to basic HTML structure. After that, I transitioned into styling with css (first mobile then desktop). Once the css was all finished, I added the active states before adding some basic JS. Finally, I used the shrtcode API and session storage to finish my project. Later on, I came back and added a basic backend to my project. Stored user data within a MYSQL database.
 
 ### Built with
 
 - HTML5
-- Tailwind CSS
-- React JS
+- TailwindCSS
+- ReactJS
+- NodeJS
+- MYSQL
 - Mobile First Workflow
 
 ### What I learned
@@ -88,6 +92,8 @@ useEffect(() => {
 ### Continued development
 
 I want to work more with APIs and get more practice using React. Right now everything is basically decorative, but in the future I would like to add other pages and create a working sign up and login interface.
+
+Update: I have created a working sign up and login interface, but I would still like to have more practice with APIs and backend.
 
 ### Useful resources
 
