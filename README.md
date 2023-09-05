@@ -9,7 +9,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Live Site](#live-site)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
