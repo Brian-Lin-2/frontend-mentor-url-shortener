@@ -40,6 +40,7 @@ export default function MobileMenu({ setOpenMenu, login, setLogin }) {
             className="py-2 px-28 bg-red rounded-full hover:text-black hover:bg-light-red"
             onClick={() => {
               setLogin(false);
+              sessionStorage.clear();
             }}
           >
             Logout

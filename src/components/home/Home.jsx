@@ -6,7 +6,7 @@ export default function Home({ login, setLogin }) {
   return (
     <div className="font-poppins">
       <Header login={login} setLogin={setLogin} />
-      <Body />
+      <Body login={login} />
       <Footer />
     </div>
   );

@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 
 export default function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(sessionStorage.getItem("login") || false);
 
   return (
     <Router>

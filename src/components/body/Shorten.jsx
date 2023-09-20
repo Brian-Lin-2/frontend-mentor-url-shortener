@@ -1,14 +1,15 @@
 import Link from "./Link";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-export default function Shorten() {
-  // Import history, if it exists.
-  const getStorage = () => {
-    return JSON.parse(sessionStorage.getItem("history")) || [];
+export default function Shorten({ login }) {
+  // Check if user is logged in.
+  const isLoggedIn = () => {
+    return sessionStorage.getItem("login") || false;
   };
 
   const [link, setLink] = useState("");
-  const [history, setHistory] = useState(getStorage());
+  const [history, setHistory] = useState([]);
   const [error, setError] = useState(false);
 
   let errorTextMob =
@@ -64,10 +65,35 @@ export default function Shorten() {
     }
   };
 
-  // Saves links in local memory for future use.
+  // Import history from session storage or account if it exists.
   useEffect(() => {
-    sessionStorage.setItem("history", JSON.stringify(history));
-  });
+    if (isLoggedIn()) {
+      axios
+        .get(`http://localhost:3306/user`, {
+          params: {
+            email: login,
+          },
+        })
+        .then((res) => {
+          setHistory(JSON.parse(res.data[0].links));
+        });
+    }
+  }, []);
+
+  // Save link to user's account if it exists. Skip initial render.
+  useEffect(() => {
+    if (isLoggedIn() && history.length != 0) {
+      axios
+        .post("http://localhost:3306/add", {
+          links: JSON.stringify(history),
+          email: login,
+        })
+        .then(() => console.log(JSON.stringify(history)))
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+  }, [history]);
 
   return (
     <>

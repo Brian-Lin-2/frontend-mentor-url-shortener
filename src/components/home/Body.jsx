@@ -2,7 +2,7 @@ import InfoCard from "../body/InfoCard";
 import Shorten from "../body/Shorten";
 import Boost from "../body/Boost";
 
-export default function Body() {
+export default function Body({ login }) {
   const info = [
     {
       image: "./images/icon-brand-recognition.svg",
@@ -27,7 +27,7 @@ export default function Body() {
   return (
     <>
       <div className="bg-light-gray pb-24">
-        <Shorten />
+        <Shorten login={login} />
 
         <div className="mx-6 text-center mb-32 lg:mt-12 lg:mb-20">
           <h1 className="font-bold text-2xl mb-4 lg:text-4xl">

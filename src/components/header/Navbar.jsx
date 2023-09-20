@@ -62,6 +62,7 @@ export default function Navbar({ login, setLogin }) {
             className="hidden lg:block bg-red py-2 px-6 rounded-full text-white text-sm hover:bg-light-red"
             onClick={() => {
               setLogin(false);
+              sessionStorage.clear();
             }}
           >
             Logout
