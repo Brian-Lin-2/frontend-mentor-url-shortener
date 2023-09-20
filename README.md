@@ -70,7 +70,7 @@ const convertLink = async (link) => {
 };
 ```
 
-I also learned a lot about how storage on a website works and when to use cookies, local storage, and system storage.
+I also learned a lot about how storage on a website works and when to use cookies, local storage, and system storage. Update: This has been replaced by a history system using user authentication.
 
 ```jsx
 // Import history, if it exists.
@@ -84,11 +84,43 @@ useEffect(() => {
 });
 ```
 
+This project really helped me understand how ReactJS, NodeJS/ExpressJS, and Axios work together to create a full stack project.
+
+```jsx
+// Save link to user's account if it exists. Skip initial render.
+useEffect(() => {
+  if (isLoggedIn() && history.length != 0) {
+    axios
+      .post("http://localhost:3306/add", {
+        links: JSON.stringify(history),
+        email: login,
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+}, [history]);
+
+app.post("/add", (req, res) => {
+  if (req.body.links) {
+    const sql =
+      "UPDATE `user-database`.`login` SET `links` = ? WHERE `email` = ?";
+    db.query(sql, [req.body.links, req.body.email], (error, result) => {
+      if (error) {
+        console.log(error);
+      }
+    });
+  }
+});
+```
+
 ### Continued development
 
 I want to work more with APIs and get more practice using React. Right now everything is basically decorative, but in the future I would like to add other pages and create a working sign up and login interface.
 
 Update: I have created a working sign up and login interface, but I would still like to have more practice with APIs and backend.
+
+Update 2: I also introduced a history system into a user's account. Now for links to persist, a user would have to create an account and sign in. However, the way links are stored is not the most efficient (Using JSON formatting for a relational database) so for future projects I would like to use better practices.
 
 ### Useful resources
 

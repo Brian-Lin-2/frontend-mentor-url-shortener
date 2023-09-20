@@ -65,7 +65,7 @@ export default function Shorten({ login }) {
     }
   };
 
-  // Import history from session storage or account if it exists.
+  // Import history from account if it exists.
   useEffect(() => {
     if (isLoggedIn()) {
       axios
@@ -88,7 +88,6 @@ export default function Shorten({ login }) {
           links: JSON.stringify(history),
           email: login,
         })
-        .then(() => console.log(JSON.stringify(history)))
         .catch((e) => {
           console.log(e);
         });

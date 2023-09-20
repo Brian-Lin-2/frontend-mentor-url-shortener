@@ -32,9 +32,11 @@ export default function Login({ setLogin }) {
 
     if (validateInfo()) {
       axios
-        .post("http://localhost:3306/login", {
-          email: email,
-          password: password,
+        .get("http://localhost:3306/login", {
+          params: {
+            email: email,
+            password: password,
+          },
         })
         .then((res) => {
           if (res.data) {
