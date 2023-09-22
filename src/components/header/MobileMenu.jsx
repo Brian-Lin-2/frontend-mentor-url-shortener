@@ -41,6 +41,7 @@ export default function MobileMenu({ setOpenMenu, login, setLogin }) {
             onClick={() => {
               setLogin(false);
               sessionStorage.clear();
+              location.reload();
             }}
           >
             Logout

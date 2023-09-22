@@ -63,6 +63,7 @@ export default function Navbar({ login, setLogin }) {
             onClick={() => {
               setLogin(false);
               sessionStorage.clear();
+              location.reload();
             }}
           >
             Logout

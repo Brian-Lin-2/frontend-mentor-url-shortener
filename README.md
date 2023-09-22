@@ -91,7 +91,7 @@ This project really helped me understand how ReactJS, NodeJS/ExpressJS, and Axio
 useEffect(() => {
   if (isLoggedIn() && history.length != 0) {
     axios
-      .post("http://localhost:3306/add", {
+      .post("https://url-shortener-backend-maf5.onrender.com/add", {
         links: JSON.stringify(history),
         email: login,
       })

@@ -32,7 +32,7 @@ export default function Login({ setLogin }) {
 
     if (validateInfo()) {
       axios
-        .get("http://localhost:3306/login", {
+        .get("https://url-shortener-backend-maf5.onrender.com/login", {
           params: {
             email: email,
             password: password,
